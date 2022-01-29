@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: UIButton) {
         if let value = sender.currentTitle {
             if (value == "=") {
-                priorValue = priorValue + Int(currentValue)!
+                priorValue = priorValue + (Int(currentValue) != nil ? Int(currentValue)! : 0)
                 result.text = "\(priorValue)"
                 priorValue = 0
                 currentValue = ""
